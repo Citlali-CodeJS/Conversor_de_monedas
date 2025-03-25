@@ -1,0 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+background-image: url("../img/money.png");
+}
+
+
+.grid-container{
+    display: grid;
+    background-color: #163300;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	width: 1010px;
+	text-align: center;
+    color: #9fe870;
+	height: 700px;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	grid-template-areas: 
+	"h h"
+	"num g"
+	"num g";
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70px;
+    border-bottom: solid #9fe870 1px;
+	grid-area: h;
+}
+
+#conversor{
+    display: flex
+    ;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        background-color:rgba(127, 160, 124, 0.993);
+        padding: 35px;
+        border-radius: 15px;
+        color: rgb(0, 31, 52);
+        width: 350px;
+        margin-top: 50px;
+        margin-left: 25px;
+    }
+
+
+ 
+    
+.title-top{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:white;
+    font-weight: 500;
+  
+ }
+
+
+ .title{
+    padding-top: 10px;
+    color:white;
+    
+ }
+.subtitle{
+    color: white;
+}
+
+#amount{
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+#currency{
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+#btn-convert{
+    background-color: #9fe870;
+    padding-inline: 20px;
+    padding-block: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-family: 'Gill Sans', 'Trebuchet MS', sans-serif;
+}
+
+#btn-convert:hover{
+    background-color:#8deb52;
+}
+#result{
+    color: white;
+}
+#container_grafico{
+    display: grid;
+    gap: 20px;
+    margin-top: 13px;
+    grid-area: g;
+    margin-right: 15px;
+}
+
+#container_grafico div{
+    padding: 20px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+
+@media (width<800px){
+body{
+    flex-direction: column;
+    gap: 30px;
+    padding-block: 30px;
+    height: auto;
+}
+}
