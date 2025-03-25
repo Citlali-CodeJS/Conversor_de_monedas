@@ -1,5 +1,5 @@
 
-// Capturando los datos de la api
+
 let valorDolar
 let valorEuro
 
@@ -17,7 +17,7 @@ async function getConversorMonedas(){
 
 getConversorMonedas()
 
-// Declarando variables y creando el evento click en el botón
+
 
 let buscarDato = document.getElementById("conversor")
 let imprimirResultado = document.getElementById("result")
@@ -30,7 +30,7 @@ let pesos = document.getElementById("amount").value
 let resultado
 
 
-// Empleando las condiciones, calculando el valor y cambiando el DOM mediante innerHTML
+
 
 if (selectMoneda=="dolar"){
     resultado = pesos / valorDolar
@@ -42,7 +42,7 @@ else if (selectMoneda=="euro"){
 }
 })
 
-// Creando el gráfico Dólares
+
 async function getDataHistoricaDol(){ 
     const endpoint = "https://mindicador.cl/api/dolar";
     const res = await fetch(endpoint);
@@ -52,7 +52,7 @@ async function getDataHistoricaDol(){
 
 function ConfiguracionGraficaDol(monedas){
     const tipoDeGrafica = "line";
-    // se usa substr para tomar solo los 10 primeros dígitos de la fecha considerando que el primer dígito está en la ubicación 0
+   
     const fechas = monedas.serie.map((moneda)=>moneda.fecha.substr(0,10));
     const titulo = "Últimos 10 Registros";
     const colorDeLinea = "rgba(127, 160, 124, 0.993)";
@@ -60,7 +60,7 @@ function ConfiguracionGraficaDol(monedas){
         const valor = moneda.valor;
         return Number(valor);
     });
-    // se sustrae sólo 10 registros en copias de los array y se usa reverse para mostrarlos de izquierda a derecha
+    
     const fechas10 = fechas.slice(0,10).reverse();
     const valores10 = valores.slice(0,10).reverse();
 
@@ -90,7 +90,7 @@ async function renderGraficaDol(){
 renderGraficaDol();
 
 
-// creando gráfico Euros
+
 
 async function getDataHistoricaEu(){ 
     const endpoint = "https://mindicador.cl/api/euro";
@@ -101,7 +101,7 @@ async function getDataHistoricaEu(){
 
 function ConfiguracionGraficaEu(monedas){
     const tipoDeGrafica = "line";
-    // se usa substr para tomar solo los 10 primeros dígitos de la fecha considerando que el primer dígito está en la ubicación 0
+    
     const fechas = monedas.serie.map((moneda)=>moneda.fecha.substr(0,10));
     const titulo = "Últimos 10 Registros";
     const colorDeLinea = "rgba(127, 160, 124, 0.993)";
@@ -109,7 +109,7 @@ function ConfiguracionGraficaEu(monedas){
         const valor = moneda.valor;
         return Number(valor);
     });
-    // se sustrae sólo 10 registros en copias de los array y se usa reverse para mostrarlos de izquierda a derecha
+   
     const fechas10 = fechas.slice(0,10).reverse();
     const valores10 = valores.slice(0,10).reverse();
 
