@@ -121,11 +121,3 @@ background-image: url("../img/money.png");
 }
 
 
-@media (width<800px){
-body{
-    flex-direction: column;
-    gap: 30px;
-    padding-block: 30px;
-    height: auto;
-}
-}
